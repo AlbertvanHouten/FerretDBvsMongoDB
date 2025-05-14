@@ -26,9 +26,7 @@ This architecture allows you to use MongoDB client libraries while storing your 
 ## Requirements
 
 - Python 3.11 or higher
-- MongoDB instance
-- FerretDB instance (with PostgreSQL backend)
-- Required Python packages (see `pyproject.toml`)
+- Docker compose
 
 ## Setup
 
