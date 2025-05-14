@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: ghcr.io/ferretdb/postgres-documentdb:17-0.103.0-ferretdb-2.2.0
+    restart: on-failure
+    environment:
+      - POSTGRES_USER=albert
+      - POSTGRES_PASSWORD=vanhouten
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  ferretdb:
+    image: ghcr.io/ferretdb/ferretdb:2.2.0
+    restart: on-failure
+    ports:
+      - 27018:27017
+    environment:
+      - FERRETDB_POSTGRESQL_URL=postgres://albert:vanhouten@postgres:5432/postgres
+    depends_on:
+      - postgres
+
+  mongodb:
+    image: mongo:8.0
+    restart: on-failure
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=albert
+      - MONGO_INITDB_ROOT_PASSWORD=vanhouten
+    volumes:
+      - ./mongodb_data:/data/db
+
+networks:
+  default:
+    name: ferretdb

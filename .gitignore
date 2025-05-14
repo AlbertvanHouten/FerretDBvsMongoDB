@@ -1,0 +1,5 @@
+data
+mongodb_data
+.venv
+uv.lock
+.idea

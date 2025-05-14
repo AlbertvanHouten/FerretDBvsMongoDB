@@ -1,0 +1,13 @@
+[project]
+name = "ferretdbtest"
+version = "0.1.0"
+description = "Comparison between MongoDB and FerretDB"
+requires-python = ">=3.11"
+dependencies = [
+    "pymongo",
+    "matplotlib",
+    "pandas",
+    "numpy",
+    "psycopg2-binary", # For direct PostgreSQL access if needed
+    "python-dotenv", # For environment variables
+]
