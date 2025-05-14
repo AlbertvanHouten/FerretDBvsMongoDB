@@ -340,32 +340,26 @@ class DatabaseComparison:
             'FerretDB': ferretdb_times
         })
 
-        # Melt the DataFrame for grouped bar chart
-        df_melted = pd.melt(df, id_vars=['Operation'], value_vars=['MongoDB', 'FerretDB'],
-                           var_name='Database', value_name='Time (seconds)')
-
         # Create the plot
         fig = plt.figure(figsize=(12, 8))
-
-        # Create grouped bar chart
         ax = plt.subplot(111)
-        bars = ax.bar(x=np.arange(len(operations) * 2), height=df_melted['Time (seconds)'],
-               color=['blue' if db == 'MongoDB' else 'green' for db in df_melted['Database']])
+
+        # Set the positions for the bars
+        bar_width = 0.35
+        x = np.arange(len(operations))
+
+        # Create grouped bar chart with bars next to each other for each operation
+        mongo_bars = ax.bar(x - bar_width/2, mongodb_times, bar_width, color='blue', label='MongoDB')
+        ferret_bars = ax.bar(x + bar_width/2, ferretdb_times, bar_width, color='green', label='FerretDB')
 
         # Add labels and title
         ax.set_title('MongoDB vs FerretDB Performance Comparison', fontsize=16)
         ax.set_ylabel('Time (seconds)', fontsize=14)
-        ax.set_xticks(np.arange(len(operations) * 2))
-        ax.set_xticklabels([f"{op}\n({db})" for op, db in zip(df_melted['Operation'], df_melted['Database'])],
-                  rotation=45, ha='right')
+        ax.set_xticks(x)
+        ax.set_xticklabels(operations, rotation=45, ha='right')
 
-        # Add a legend with explicit handles for each database
-        from matplotlib.patches import Patch
-        legend_elements = [
-            Patch(facecolor='blue', label='MongoDB'),
-            Patch(facecolor='green', label='FerretDB')
-        ]
-        ax.legend(handles=legend_elements)
+        # Add a legend using the labels from the bar chart
+        ax.legend()
 
         plt.tight_layout()
         plt.savefig('mongodb_vs_ferretdb.png')
