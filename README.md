@@ -38,7 +38,7 @@ This architecture allows you to use MongoDB client libraries while storing your 
    uv sync
    ```
 3. Set up MongoDB and FerretDB:
-     - Start the services with `docker-compose up -d`
+     - Start the services with `docker compose up -d`
      - MongoDB is configured with username "albert" and password "vanhouten"
      - FerretDB is configured with username "albert" and password "vanhouten"
 
