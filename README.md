@@ -1,6 +1,6 @@
 # MongoDB vs FerretDB Comparison Tool
 
-This project provides a comprehensive comparison between MongoDB and FerretDB, focusing on performance metrics and feature compatibility.
+This project provides a comprehensive comparison between MongoDB and FerretDB, focusing on performance metrics.
 
 ## About FerretDB
 
@@ -21,15 +21,12 @@ This architecture allows you to use MongoDB client libraries while storing your 
 - Performance comparison for CRUD operations (Create, Read, Update, Delete)
 - Query performance testing
 - Aggregation framework performance testing
-- Feature compatibility comparison
 - Visualization of performance results
 
 ## Requirements
 
 - Python 3.11 or higher
-- MongoDB instance
-- FerretDB instance (with PostgreSQL backend)
-- Required Python packages (see `pyproject.toml`)
+- Docker compose
 
 ## Setup
 
@@ -39,7 +36,7 @@ This architecture allows you to use MongoDB client libraries while storing your 
    uv sync
    ```
 3. Set up MongoDB and FerretDB:
-     - Start the services with `docker-compose up -d`
+     - Start the services with `docker compose up -d`
      - MongoDB is configured with username "albert" and password "vanhouten"
      - FerretDB is configured with username "albert" and password "vanhouten"
 
