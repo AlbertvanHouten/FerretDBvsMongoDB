@@ -1,6 +1,6 @@
 # MongoDB vs FerretDB Comparison Tool
 
-This project provides a comprehensive comparison between MongoDB and FerretDB, focusing on performance metrics and feature compatibility.
+This project provides a comprehensive comparison between MongoDB and FerretDB, focusing on performance metrics.
 
 ## About FerretDB
 
