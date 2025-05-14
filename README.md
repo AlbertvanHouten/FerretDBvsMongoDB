@@ -21,7 +21,6 @@ This architecture allows you to use MongoDB client libraries while storing your 
 - Performance comparison for CRUD operations (Create, Read, Update, Delete)
 - Query performance testing
 - Aggregation framework performance testing
-- Feature compatibility comparison
 - Visualization of performance results
 
 ## Requirements
