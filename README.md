@@ -60,6 +60,5 @@ The script will:
 
 You can adjust the test parameters in `mongodb_vs_ferretdb.py`:
 
-- `NUM_DOCUMENTS`: Number of documents to use in tests
 - `NUM_QUERIES`: Number of queries to perform in each test
 - `NUM_RUNS`: Number of test runs for averaging results
