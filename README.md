@@ -35,10 +35,12 @@ This architecture allows you to use MongoDB client libraries while storing your 
    ```
    uv sync
    ```
-3. Set up MongoDB and FerretDB:
+3. Start MongoDB and FerretDB:
      - Start the services with `docker compose up -d`
-     - MongoDB is configured with username "albert" and password "vanhouten"
-     - FerretDB is configured with username "albert" and password "vanhouten"
+
+4. Import Intel Geti sample data into both MongoDB and FerretDB:
+   - mongorestore --uri="mongodb://albert:vanhouten@localhost:27018" --archive < mongo.dump
+   - mongorestore --uri="mongodb://albert:vanhouten@localhost:27017" --archive < mongo.dump
 
 ## Usage
 
