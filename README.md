@@ -56,6 +56,12 @@ The script will:
 3. Display results in the console
 4. Generate a bar chart visualization saved as `mongodb_vs_ferretdb.png`
 
+## Results
+
+Below is a sample performance comparison between MongoDB and FerretDB:
+
+![MongoDB vs FerretDB Performance Comparison](mongodb_vs_ferretdb.png)
+
 ## Customization
 
 You can adjust the test parameters in `mongodb_vs_ferretdb.py`:
