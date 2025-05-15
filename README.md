@@ -39,8 +39,8 @@ This architecture allows you to use MongoDB client libraries while storing your 
      - Start the services with `docker compose up -d`
 
 4. Import Intel Geti sample data into both MongoDB and FerretDB:
-   - mongorestore --uri="mongodb://albert:vanhouten@localhost:27018" --archive < mongo.dump
-   - mongorestore --uri="mongodb://albert:vanhouten@localhost:27017" --archive < mongo.dump
+   - `mongorestore --uri="mongodb://albert:vanhouten@localhost:27018" --archive < mongo.dump`
+   - `mongorestore --uri="mongodb://albert:vanhouten@localhost:27017" --archive < mongo.dump`
 
 ## Usage
 
