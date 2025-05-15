@@ -55,7 +55,6 @@ class DatabaseComparison:
         self.ferret_db = self.ferret_client[DB_NAME]
         self.ferret_collection = self.ferret_db[COLLECTION_NAME]
 
-        # Results storage
         self.results = {
             "insert": {"mongodb": [], "ferretdb": []},
             "read": {"mongodb": [], "ferretdb": []},
@@ -73,7 +72,6 @@ class DatabaseComparison:
         """
         self.mongo_db.drop_collection(COLLECTION_NAME)
         self.ferret_db.drop_collection(COLLECTION_NAME)
-        # We don't drop dataset_storage_filter_data collection as per requirements
         self.mongo_client.close()
         self.ferret_client.close()
 
